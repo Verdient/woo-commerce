@@ -1,0 +1,30 @@
+{
+    "name": "verdient/woo-commerce",
+    "description": "WooCommerce",
+    "type": "library",
+    "keywords": [
+        "WooCommerce"
+    ],
+    "homepage": "https://github.com/Verdient/woo-commerce",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Verdient.",
+            "email": "fagui.zhu@foxmail.com",
+            "homepage": "https://github.com/Verdient"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/Verdient/woo-commercek/issues",
+        "source": "https://github.com/Verdient/woo-commerce"
+    },
+    "require": {
+        "php": ">=7.0.0",
+        "verdient/http-api": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Verdient\\WooCommerce\\": "src"
+        }
+    }
+}

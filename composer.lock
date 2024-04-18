@@ -1,0 +1,119 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "22c860d28a7c7b0d1c76917910a57325",
+    "packages": [
+        {
+            "name": "verdient/http",
+            "version": "1.0.9",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Verdient/http.git",
+                "reference": "d7c85f76ac6057f48d4770a1d54eddd7d41aff01"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Verdient/http/zipball/d7c85f76ac6057f48d4770a1d54eddd7d41aff01",
+                "reference": "d7c85f76ac6057f48d4770a1d54eddd7d41aff01",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0.0"
+            },
+            "require-dev": {
+                "swoole/ide-helper": "^4.8"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Verdient\\http\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Verdient.",
+                    "email": "fagui.zhu@foxmail.com",
+                    "homepage": "https://github.com/Verdient"
+                }
+            ],
+            "description": "php http client",
+            "homepage": "https://github.com/Verdient/http",
+            "keywords": [
+                "http",
+                "request",
+                "restful"
+            ],
+            "support": {
+                "issues": "https://github.com/Verdient/http/issues",
+                "source": "https://github.com/Verdient/http"
+            },
+            "time": "2024-01-23T04:36:05+00:00"
+        },
+        {
+            "name": "verdient/http-api",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Verdient/http-api.git",
+                "reference": "9edd60fade3a2a758c29f6263e150e9e10315d1e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Verdient/http-api/zipball/9edd60fade3a2a758c29f6263e150e9e10315d1e",
+                "reference": "9edd60fade3a2a758c29f6263e150e9e10315d1e",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0.0",
+                "verdient/http": "^1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Verdient\\HttpAPI\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Verdient.",
+                    "email": "fagui.zhu@foxmail.com",
+                    "homepage": "https://github.com/Verdient"
+                }
+            ],
+            "description": "HTTP API PACKAGE",
+            "homepage": "https://github.com/Verdient/http-api",
+            "keywords": [
+                "api",
+                "http-api",
+                "package"
+            ],
+            "support": {
+                "issues": "https://github.com/Verdient/http-api/issues",
+                "source": "https://github.com/Verdient/http-api"
+            },
+            "time": "2023-08-16T11:30:27+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {
+        "php": ">=7.0.0"
+    },
+    "platform-dev": [],
+    "plugin-api-version": "2.3.0"
+}
