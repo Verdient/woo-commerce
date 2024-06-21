@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace Verdient\WooCommerce;
 
-use Hyperf\Stringable\Str;
-
 /**
  * 请求
  * @author Verdient。
@@ -52,7 +50,7 @@ class Request extends \Verdient\http\Request
             $params = array_merge($query, [
                 'oauth_consumer_key' => $this->key,
                 'oauth_timestamp' => time(),
-                'oauth_nonce' => Str::random(32),
+                'oauth_nonce' => $this->random(32),
                 'oauth_signature_method' => 'HMAC-SHA256',
             ]);
             uksort($params, 'strcmp');
@@ -61,5 +59,25 @@ class Request extends \Verdient\http\Request
             $params['oauth_signature'] = base64_encode(hash_hmac('SHA256', $signStr, $this->secret . '&', true));
             $this->addHeader('Authorization', 'OAuth ' . http_build_query($params, '', ','));
         }
+    }
+
+    /**
+     * 生成随机字符串
+     * @param int $length 长度
+     * @author Verdient。
+     */
+    protected function random(int $length = 16): string
+    {
+        $string = '';
+
+        while (($len = strlen($string)) < $length) {
+            $size = $length - $len;
+
+            $bytes = random_bytes($size);
+
+            $string .= substr(str_replace(['/', '+', '='], '', base64_encode($bytes)), 0, $size);
+        }
+
+        return $string;
     }
 }
