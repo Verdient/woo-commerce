@@ -37,6 +37,18 @@ abstract class AbstractClient
     protected $version = 'v3';
 
     /**
+     * @var string 代理地址
+     * @author Verdient。
+     */
+    protected $proxyHost = null;
+
+    /**
+     * @var int 代理端口
+     * @author Verdient。
+     */
+    protected $proxyPort = null;
+
+    /**
      * @param $endpoint 接入点
      * @param $key 访问标识
      * @param $secret 访问秘钥
@@ -59,12 +71,32 @@ abstract class AbstractClient
      */
     public function request($path): Request
     {
-        return (new Request([
+        $request = (new Request([
             'key' => $this->key,
             'secret' => $this->secret
         ]))
             ->setUrl($this->endpoint . '/wp-json/wc/' . $this->version . '/' . $path);
-            // ->setQuerySerializer(KeepNameSerializer::class);
+        // ->setQuerySerializer(KeepNameSerializer::class);
+
+        if ($this->proxyHost) {
+            $request->setProxy($this->proxyHost, $this->proxyPort);
+        }
+
+        return $request;
+    }
+
+    /**
+     * 设置代理
+     * @param string $host 地址
+     * @param int $port 端口
+     * @return static
+     * @author Verdient。
+     */
+    public function setProxy($host, $port)
+    {
+        $this->proxyHost = $host;
+        $this->proxyPort = $port;
+        return $this;
     }
 
     /**
