@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Verdient\WooCommerce;
 
+use Verdient\WooCommerce\Traits\HasCreate;
 use Verdient\WooCommerce\Traits\HasList;
 use Verdient\WooCommerce\Traits\HasOne;
 
@@ -13,6 +14,7 @@ use Verdient\WooCommerce\Traits\HasOne;
  */
 class Order extends AbstractClient
 {
+    use HasCreate;
     use HasOne;
     use HasList;
 
